@@ -10,5 +10,11 @@ public class Main {
         Scanner p = new Scanner (System.in);
         System.out.println("How many people are in your party? ");
         int peopleNum = p.nextInt();
+
+        double tipValue = tipPercent * 0.01;
+        double actualTipValue = bill * tipValue;
+        double billWithTip = bill + actualTipValue;
+        double tipPerPerson = actualTipValue / peopleNum;
+        double totalPerPerson = billWithTip /peopleNum;
     }
 }

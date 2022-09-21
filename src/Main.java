@@ -12,9 +12,17 @@ public class Main {
         int peopleNum = p.nextInt();
 
         double tipValue = tipPercent * 0.01;
+        // Calculates the actual percentage of the bill the tip will be.
         double actualTipValue = bill * tipValue;
+        // Calculates the monetary value of the tip.
         double billWithTip = bill + actualTipValue;
+        // Calculates the total cost of the bill with tip.
         double tipPerPerson = actualTipValue / peopleNum;
-        double totalPerPerson = billWithTip /peopleNum;
+        // Calculates the amount of tip each person pays.
+        double totalPerPerson = billWithTip / peopleNum;
+        // Calculates the value of the total bill each person pays.
+
+        System.out.println("Your total tip is " + actualTipValue + ".");
+        System.out.println();
     }
 }

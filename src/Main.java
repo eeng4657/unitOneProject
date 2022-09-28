@@ -11,18 +11,20 @@ public class Main {
         System.out.println("How many people are in your party? ");
         int peopleNum = p.nextInt();
 
-        double tipValue = tipPercent * 0.01;
+        double tipValue = Math.round((tipPercent * 0.01) * 100.0) / 100.0;
         // Calculates the actual percentage of the bill the tip will be.
-        double actualTipValue = bill * tipValue;
+        double actualTipValue = Math.round((bill * tipValue) * 100.0) / 100.0;
         // Calculates the monetary value of the tip.
-        double billWithTip = bill + actualTipValue;
+        double billWithTip = Math.round((bill + actualTipValue) * 100.0) / 100.0;
         // Calculates the total cost of the bill with tip.
-        double tipPerPerson = actualTipValue / peopleNum;
+        double tipPerPerson = Math.round((actualTipValue / peopleNum) * 100.0) / 100.0;
         // Calculates the amount of tip each person pays.
-        double totalPerPerson = billWithTip / peopleNum;
+        double totalPerPerson = Math.round((billWithTip / peopleNum) * 100.0) / 100.0;
         // Calculates the value of the total bill each person pays.
 
-        System.out.println("Your total tip is " + actualTipValue + ".");
-        System.out.println();
+        System.out.println("Your total tip is $" + actualTipValue + ".");
+        System.out.println("Your total bill is $" + billWithTip + ".");
+        System.out.println("Each person owes $" + tipPerPerson + " in tips.");
+        System.out.println("Each person owes $" + totalPerPerson + " in total.");
     }
 }
